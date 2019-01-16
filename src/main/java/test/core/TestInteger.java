@@ -1,4 +1,4 @@
-package test;
+package test.core;
 
 public class TestInteger {
     public static void main(String[] args) {
