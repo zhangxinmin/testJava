@@ -100,15 +100,20 @@ class GeneratorImpl3<T> implements Generator<String>{
     }
 }
 //==========================测试方法============================
+ 
+ 
+	
 public class TestT {
 
 
 	public static void main(String[] args) {
+		String str= getObj();
+		System.out.print(str);
 		//testt();
-		testSpe();
-		testMyMap();
-		testFlag(new GeneratorImpl2());
-		testFlag(new GeneratorImpl2<Integer>());
+		//testSpe();
+		//testMyMap();
+		//testFlag(new GeneratorImpl2());
+		//testFlag(new GeneratorImpl2<Integer>());
 		//getFirst2(new ArrayList<String>());//通配符定义了边界 后 必须 满足边界限制 
 		
 		//在java中是”不能创建一个确切的泛型类型的数组”的。 所以这行程序报错
@@ -116,13 +121,19 @@ public class TestT {
 
 		//而使用通配符创建泛型数组是可以的，如下面这个例子：
 
-		List<?>[] ls = new ArrayList<?>[10]; 
+		//List<?>[] ls = new ArrayList<?>[10]; 
 
 		//这样也是可以的：
-		List<String>[] ls2 = new ArrayList[10];
+		//List<String>[] ls2 = new ArrayList[10];
 
 	}
 //=========================泛型方法开始===================================	
+	//这样的泛型方法 调用者接收到返回值后不用强制转型
+	public static <T> T  getObj(){
+		Object str= new String("123");
+		return (T)str;
+	}
+	
 	/**
 	 * 泛型方法
 	 * 这才是一个真正的泛型方法。 其他的 泛型类中的成员方法  以及  只使用了泛型通配符的方法都不是泛型方法
@@ -188,6 +199,7 @@ public class TestT {
 		System.out.println(map2.get("1"));
 		
 	}
+	
 	
 	
 	

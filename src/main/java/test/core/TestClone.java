@@ -73,9 +73,8 @@ public class TestClone implements Cloneable{
 		TestClone t =  new TestClone();
 		t.setName("zhangsan");
 		t.setSex(1);
-		t.setAge(200);
+		t.setAge(300);
 		t.setObj(t);
-		
 		TestClone t2= t.getCloneIns();
 		
 		System.out.println("t.getAge()==t2.getAge()"+(t.getAge()==t2.getAge()));//true 
