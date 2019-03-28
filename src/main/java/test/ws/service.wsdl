@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendDataToSer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="equ_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="funid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paraname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paravalue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createdate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendDataToSerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendDataToSerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDataFromSer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="equ_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="funid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paravalue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createdate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDataFromSerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDataFromSerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="2" maxOccurs="2" />
+                  <!--  <s:element ref="s:schema" />  -->
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDataToSer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="equ_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="funid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paraname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paravalue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createdate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDataToSerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateDataToSerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Up">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sup" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Down">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sup" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendDataToSerSoapIn">
+    <wsdl:part name="parameters" element="tns:sendDataToSer" />
+  </wsdl:message>
+  <wsdl:message name="sendDataToSerSoapOut">
+    <wsdl:part name="parameters" element="tns:sendDataToSerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDataFromSerSoapIn">
+    <wsdl:part name="parameters" element="tns:getDataFromSer" />
+  </wsdl:message>
+  <wsdl:message name="getDataFromSerSoapOut">
+    <wsdl:part name="parameters" element="tns:getDataFromSerResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateDataToSerSoapIn">
+    <wsdl:part name="parameters" element="tns:updateDataToSer" />
+  </wsdl:message>
+  <wsdl:message name="updateDataToSerSoapOut">
+    <wsdl:part name="parameters" element="tns:updateDataToSerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpSoapIn">
+    <wsdl:part name="parameters" element="tns:Up" />
+  </wsdl:message>
+  <wsdl:message name="UpSoapOut">
+    <wsdl:part name="parameters" element="tns:UpResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownSoapIn">
+    <wsdl:part name="parameters" element="tns:Down" />
+  </wsdl:message>
+  <wsdl:message name="DownSoapOut">
+    <wsdl:part name="parameters" element="tns:DownResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendDataToSer">
+      <wsdl:input message="tns:sendDataToSerSoapIn" />
+      <wsdl:output message="tns:sendDataToSerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromSer">
+      <wsdl:input message="tns:getDataFromSerSoapIn" />
+      <wsdl:output message="tns:getDataFromSerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDataToSer">
+      <wsdl:input message="tns:updateDataToSerSoapIn" />
+      <wsdl:output message="tns:updateDataToSerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Up">
+      <wsdl:input message="tns:UpSoapIn" />
+      <wsdl:output message="tns:UpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Down">
+      <wsdl:input message="tns:DownSoapIn" />
+      <wsdl:output message="tns:DownSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendDataToSer">
+      <soap:operation soapAction="http://tempuri.org/sendDataToSer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromSer">
+      <soap:operation soapAction="http://tempuri.org/getDataFromSer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDataToSer">
+      <soap:operation soapAction="http://tempuri.org/updateDataToSer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Up">
+      <soap:operation soapAction="http://tempuri.org/Up" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Down">
+      <soap:operation soapAction="http://tempuri.org/Down" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendDataToSer">
+      <soap12:operation soapAction="http://tempuri.org/sendDataToSer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromSer">
+      <soap12:operation soapAction="http://tempuri.org/getDataFromSer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDataToSer">
+      <soap12:operation soapAction="http://tempuri.org/updateDataToSer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Up">
+      <soap12:operation soapAction="http://tempuri.org/Up" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Down">
+      <soap12:operation soapAction="http://tempuri.org/Down" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://58.251.162.180/webServiceForDMZ/service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://58.251.162.180/webServiceForDMZ/service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
