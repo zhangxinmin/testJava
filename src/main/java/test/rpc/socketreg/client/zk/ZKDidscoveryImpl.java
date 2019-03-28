@@ -19,7 +19,7 @@ public class ZKDidscoveryImpl implements IDiscovery {
 	private String connStr=null;
 	private CuratorFramework cf = null;
 	//用于缓存 服务的地址列表信息
-	List<String> repos=new ArrayList<>();
+	List<String> repos=new ArrayList<String>();
 	
 	
 	public ZKDidscoveryImpl(String connStr) {

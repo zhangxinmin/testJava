@@ -19,7 +19,7 @@ public class TestList {
 		方式，如果并发操作，需要对 Iterator 对象加锁。
 	 */
 	public static void testRemove(){
-		List<String> list = new ArrayList<>();
+		List<String> list = new ArrayList<String>();
 		list.add("1");
 		list.add("2");
 		Iterator<String> iterator = list.iterator();

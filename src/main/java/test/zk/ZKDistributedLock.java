@@ -98,7 +98,8 @@ public class ZKDistributedLock implements Lock,Watcher {
 			curentLock=zk.create(lockRootPath+"/"+lockPath+"/", "1".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
 		    System.out.println("线程 "+Thread.currentThread()+"尝试竞争锁"+curentLock);
 			List<String> children = zk.getChildren(lockRootPath+"/"+lockPath, false);
-		    SortedSet<String> set=new TreeSet<String> ();
+		    SortedSet<String> set=new TreeSet<String>();
+			//SortedSet<String> set=null;
 		    for(String child:children){
 		    	//这里一定要 加上前边的路径   一起加到set中
 		    	set.add(lockRootPath+"/"+lockPath+"/"+child);
